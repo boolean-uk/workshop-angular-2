@@ -25,3 +25,56 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Tasks
+### Dependency Injection (DI) in Angular
+
+### Creating a service
+Command `ng g s services/Data`
+
+### Creating a component
+Command `ng g c components/data`
+
+Remove everything in `app.component.html` reference data-component
+Import Data component.
+
+## Adding of Angular material
+Command `ng add @angular/material`
+
+Add the following in app.component import
+```ts
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet,
+    DataComponent,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+```
+
+html
+```html
+<mat-toolbar color="primary">
+  <span>My Angular App</span>
+</mat-toolbar>
+
+<div style="text-align:center; margin-top:20px;">
+  <button mat-raised-button color="accent">Click Me</button>
+</div>
+```
+
