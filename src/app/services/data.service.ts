@@ -1,23 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  items:string[] = ['Allen John','Mark','Elliot']
-  
-  surnames:string[] = ['De Wilzin','Essex','Williams']
-  userArr:any[] = [{
-    name: 'AJ',
-    age: 19
-  },
-  {
-    name: 'John',
-    age: 22
-  }]
-  constructor() { }
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
 
-  getUserNames(){
-    return this.items;
+  constructor(private http: HttpClient) { }
+
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
+  
 }

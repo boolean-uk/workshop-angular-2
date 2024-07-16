@@ -2,10 +2,20 @@
   <span>My Angular App</span>
 </mat-toolbar>
 
-<div style="text-align:center; margin-top:20px;">
-  <button mat-raised-button color="accent">Click Me</button>
-</div>
+@if(loading){
+  <div>Loading...</div>
+}
 
-<app-data [arr]="this.ds.getUserNames()"></app-data>
+@if(!loading){
+  <ul>
+    @for (user of users; track $index) {
+      <li>{{ user.name }}</li>
+    }
+  </ul>
+}
+
+<app-data [arr]="users"></app-data>   
+<!-- 
+
 <app-data [arr]="this.ds.surnames"></app-data>
-<app-data [arr]="this.ds.userArr"></app-data>
+<app-data [arr]="this.ds.userArr"></app-data> -->
