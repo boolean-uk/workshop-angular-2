@@ -8,10 +8,20 @@ import { Observable, Observer } from 'rxjs';
 export class DataService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/';
 
-  constructor(private http: HttpClient) { }
+  // Subscribing to an Observable
+
+
+
+  constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl + 'users');
   }
+
+  getPosts(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl + 'posts');
+  }
+
+
   
 }

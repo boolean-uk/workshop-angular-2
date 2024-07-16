@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DataComponent } from './components/data/data.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -20,12 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
         HttpClientModule,
         BrowserModule,
         RouterOutlet,
-        MatButtonModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatListModule,
-        MatCardModule],
+        SharedModule
+        ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
