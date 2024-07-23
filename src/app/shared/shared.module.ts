@@ -10,7 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     MatButtonModule,
