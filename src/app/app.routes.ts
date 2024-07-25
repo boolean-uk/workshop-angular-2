@@ -1,5 +1,6 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppShellComponent } from './shared/layout/app-shell/app-shell.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   {
@@ -13,3 +14,9 @@ export const routes: Routes = [
     loadChildren: () => import('./features/client/client.module').then((m) => m.ClientModule),
   }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
