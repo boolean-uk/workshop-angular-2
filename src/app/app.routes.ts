@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'user',
     component: AppShellComponent,
     loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
   },
