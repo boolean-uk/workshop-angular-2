@@ -9,9 +9,14 @@ export const routes: Routes = [
     loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
   },
   {
-    path: 'client',
+    path: 'clients',
     component: AppShellComponent,
     loadChildren: () => import('./features/client/client.module').then((m) => m.ClientModule),
+  },
+  {
+    path: 'posts',
+    component: AppShellComponent,
+    loadChildren: () => import('./features/posts/posts.module').then((m) => m.PostsModule),
   }
 ];
 
