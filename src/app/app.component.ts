@@ -9,7 +9,7 @@ import { DataService } from './services/data.service';
 
 export class AppComponent {
   users: any[] = [];
-  posts: any[] = []
+  posts: any[] = [];
   loading: boolean = true;
   
   constructor(private userService: DataService) { }
@@ -19,7 +19,6 @@ export class AppComponent {
       (data: any) => {
         this.users = data;
         this.loading = false;
-        console.log(this.users)
       },
       (error: any) => {
         console.error('Error fetching users', error);
@@ -28,7 +27,6 @@ export class AppComponent {
     );
       this.userService.getPosts().subscribe((data) => {
         this.posts = data;
-        console.log(this.posts)
       },
       (error: any) => {
         console.error('Error fetching posts', error)
