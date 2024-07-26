@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppComponent } from '../../../../app.component';
 
 @Component({
   selector: 'app-index',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './index.component.scss'
 })
 export class IndexComponent {
+  constructor (public appData: AppComponent) {}
 }
