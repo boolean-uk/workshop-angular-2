@@ -1,0 +1,6 @@
+<ul role="list">
+    @for (item of this.appData.posts; track $index) {
+      <li role="listitem">{{ item.body }}</li>
+      <br>
+    }
+</ul>

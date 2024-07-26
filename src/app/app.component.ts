@@ -9,8 +9,9 @@ import { DataService } from './services/data.service';
 
 export class AppComponent {
   users: any[] = [];
+  posts: any[] = [];
   loading: boolean = true;
-
+  
   constructor(private userService: DataService) { }
 
   ngOnInit(): void {
@@ -22,8 +23,14 @@ export class AppComponent {
       (error: any) => {
         console.error('Error fetching users', error);
         this.loading = false;
+      },
+    );
+      this.userService.getPosts().subscribe((data) => {
+        this.posts = data;
+      },
+      (error: any) => {
+        console.error('Error fetching posts', error)
       }
     );
   }
-  
 }

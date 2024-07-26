@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ClientRoutingModule } from './client-routing.module';
 import { IndexComponent } from './pages/index/index.component';
+import { PostsRoutingModule } from './posts-routing.module';
+
 
 
 @NgModule({
   declarations: [IndexComponent],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    PostsRoutingModule
   ]
 })
-
-export class ClientModule { }
+export class PostsModule { }

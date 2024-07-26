@@ -7,6 +7,5 @@ import { AppComponent } from '../../../../app.component';
   styleUrl: './index.component.scss'
 })
 export class IndexComponent {
-
   constructor (public appData: AppComponent){}
 }

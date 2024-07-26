@@ -1,1 +1,6 @@
-<p>index works!</p>
+
+<ul role="list">
+    @for (item of this.appData.users; track $index) {
+      <li role="listitem">{{ item.username }}</li>
+    }
+</ul>
