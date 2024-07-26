@@ -1,0 +1,8 @@
+<ul role="list">
+    @for (item of this.appData.users; track $index) {
+      <li role="listitem">{{ item.name }}</li>
+      <li role="listitem">{{ item.email }}</li>
+      <li role="listitem">{{ item.phone }}</li>
+        <br>
+    }
+</ul>
