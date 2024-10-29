@@ -1,15 +1,32 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppShellComponent } from './shared/layout/app-shell/app-shell.component';
+import { NgModule } from '@angular/core';
 
-export const routes: Routes = [
+export const ROUTES: Routes = [
   {
-    path: '',
-    component: AppShellComponent,
-    loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
+    path:'',
+    component: AppShellComponent
   },
   {
-    path: 'client',
+    path: 'secure',
     component: AppShellComponent,
-    loadChildren: () => import('./features/client/client.module').then((m) => m.ClientModule),
-  }
+    children: [
+      {
+        path: 'user',
+        loadChildren: () => import('./features/user/user.module').then((m) => m.UserModule),
+      },
+      {
+        path: 'client',
+        loadChildren: () => import('./features/client/client.module').then((m) => m.ClientModule),
+      }
+    ]
+  },
+  
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(ROUTES)],
+  exports: [RouterModule],
+})
+
+export class AppRoutingModule {}

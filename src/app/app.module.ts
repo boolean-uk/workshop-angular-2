@@ -12,6 +12,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { AppShellComponent } from './shared/layout/app-shell/app-shell.component';
+import { AppRoutingModule, ROUTES } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
     declarations: [
@@ -23,8 +25,10 @@ import { AppShellComponent } from './shared/layout/app-shell/app-shell.component
         HttpClientModule,
         BrowserModule,
         RouterOutlet,
-        SharedModule
-        ],
+        SharedModule,
+        AppRoutingModule,
+    ],
+    providers: [provideAnimationsAsync()],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
