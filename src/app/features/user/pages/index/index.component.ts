@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IUser } from '../../../../model/users';
 
 @Component({
   selector: 'app-index',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class IndexComponent {
 
+  array:string[] = ['AJ','John','Ilia','Roahn']
+  user: IUser = {
+    id:12,
+    name:'AJ',
+    age: 29,
+  };
+
+  constructor(){
+
+  }
 }

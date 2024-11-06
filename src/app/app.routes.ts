@@ -1,15 +1,16 @@
 import { RouterModule, Routes } from '@angular/router';
 import { AppShellComponent } from './shared/layout/app-shell/app-shell.component';
 import { NgModule } from '@angular/core';
+import { SecureComponent } from './shared/layout/secure/secure.component';
 
 export const ROUTES: Routes = [
   {
     path:'',
     component: AppShellComponent
   },
-  {
+  { 
     path: 'secure',
-    component: AppShellComponent,
+    component: SecureComponent,
     children: [
       {
         path: 'user',
@@ -20,8 +21,7 @@ export const ROUTES: Routes = [
         loadChildren: () => import('./features/client/client.module').then((m) => m.ClientModule),
       }
     ]
-  },
-  
+  },  
 ];
 
 @NgModule({

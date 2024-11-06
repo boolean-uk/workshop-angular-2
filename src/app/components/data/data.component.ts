@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 
 @Component({
   selector: 'app-data',
@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class DataComponent {
   @Input() arr:string[] = []
+
+
   @Input() stringParam:string = ''
   constructor(){}
 
